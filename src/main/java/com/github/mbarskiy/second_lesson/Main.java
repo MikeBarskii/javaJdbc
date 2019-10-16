@@ -1,26 +1,27 @@
 package com.github.mbarskiy.second_lesson;
 
+import com.github.mbarskiy.ConnectionProperties;
+
 import java.io.File;
 import java.io.IOException;
-import java.net.URISyntaxException;
 import java.sql.*;
 import java.util.Objects;
+import java.util.Properties;
 import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) throws SQLException, ClassNotFoundException, IOException, URISyntaxException {
-        String url = "jdbc:mysql://localhost:3306/first_lesson";
-        String username = "root";
-        String password = "1234";
+    public static void main(String[] args) throws SQLException, ClassNotFoundException, IOException {
+        Properties properties = ConnectionProperties.getConnectionProperties();
+        String url = properties.getProperty("url");
 
         Class.forName("com.mysql.cj.jdbc.Driver");
-        String fileName = "books.sql";
 
+        String filename = "books.sql";
         ClassLoader classLoader = Main.class.getClassLoader();
-        File file = new File(Objects.requireNonNull(classLoader.getResource(fileName)).getFile());
+        File file = new File(Objects.requireNonNull(classLoader.getResource(filename)).getFile());
 
-        try (Connection conn = DriverManager.getConnection(url, username, password);
+        try (Connection conn = DriverManager.getConnection(url, properties);
              Scanner scan = new Scanner(file);
              Statement statement = conn.createStatement()) {
 
