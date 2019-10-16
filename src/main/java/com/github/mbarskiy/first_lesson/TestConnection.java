@@ -1,4 +1,4 @@
-package com.github.mbarskiy;
+package com.github.mbarskiy.first_lesson;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
