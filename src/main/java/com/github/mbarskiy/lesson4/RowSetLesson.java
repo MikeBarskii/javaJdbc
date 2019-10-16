@@ -1,4 +1,4 @@
-package com.github.mbarskiy.fourth_lesson;
+package com.github.mbarskiy.lesson4;
 
 import com.github.mbarskiy.ConnectionProperties;
 

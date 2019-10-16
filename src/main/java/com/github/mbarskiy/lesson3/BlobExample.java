@@ -1,7 +1,7 @@
-package com.github.mbarskiy.third_lesson;
+package com.github.mbarskiy.lesson3;
 
 import com.github.mbarskiy.ConnectionProperties;
-import com.github.mbarskiy.second_lesson.Main;
+import com.github.mbarskiy.lesson2.Main;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
